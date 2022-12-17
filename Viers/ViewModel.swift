@@ -99,9 +99,13 @@ class ViewModel: ObservableObject {
                     let id = data["id"] as? String ?? ""
                     let name = data["name"] as? String ?? ""
                     let crowd = data["crowd"] as? String ?? ""
-                    
+                    guard let timestamp = data["date"] as? Timestamp else {
+                        return
+                    }
+                    let date = timestamp.dateValue()
+                            
                     // Add the spot to the spots.
-                    let spot = Spots(id: id, name: name, crowd: crowd, date: Date.now)
+                    let spot = Spots(id: id, name: name, crowd: crowd, date: date)
                     self.spots.append(spot)
                 }
             }
