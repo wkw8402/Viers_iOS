@@ -101,7 +101,7 @@ class ViewModel: ObservableObject {
                     let crowd = data["crowd"] as? String ?? ""
                     
                     // Add the spot to the spots.
-                    let spot = Spots(id: id, name: name, crowd: crowd)
+                    let spot = Spots(id: id, name: name, crowd: crowd, date: Date.now)
                     self.spots.append(spot)
                 }
             }
@@ -116,7 +116,7 @@ class ViewModel: ObservableObject {
         let ref = db.collection("spots").document(newSpot.name)
         
         // Add or modify the document to the database.
-        ref.setData(["name": newSpot.name, "crowd": newSpot.crowd, "id": newSpot.id])
+        ref.setData(["name": newSpot.name, "crowd": newSpot.crowd, "id": newSpot.id, "date": newSpot.date])
         
         // Add the spot to the spots.
         self.spots.append(newSpot)

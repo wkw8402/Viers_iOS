@@ -11,15 +11,21 @@ struct SpotsView: View {
     @EnvironmentObject var viewModel: ViewModel
     @State var addName: String = ""
     @State var addCrowd: String = ""
+    @State var addDate: Date = Date.now
     var body: some View {
         NavigationView {
             List {
                 ForEach(viewModel.spots, id: \.id) { spot in
-                    let intCrowd = Float(spot.crowd) ?? 0.0
-                    HStack {
-                        Text(spot.name)
-                        Spacer()
-                        ProgressView(value: intCrowd/100)
+                    VStack {
+                        HStack {
+                            Text(spot.name)
+                            Spacer()
+                            let intCrowd = Float(spot.crowd) ?? 0.0
+                            ProgressView(value: intCrowd/100)
+                        }
+                        Text(spot.date, style: .time)
+                            .font(.caption)
+                            .foregroundColor(.secondary)
                     }
                 }
                 
@@ -30,7 +36,7 @@ struct SpotsView: View {
                 }
                 
                 Button("Add New Spot") {
-                    viewModel.addSpots(newSpot: Spots(name: addName, crowd: addCrowd))
+                    viewModel.addSpots(newSpot: Spots(name: addName, crowd: addCrowd, date: addDate))
                     
                 }
             }

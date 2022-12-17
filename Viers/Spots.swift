@@ -11,4 +11,5 @@ struct Spots: Identifiable {
     var id: String = UUID().uuidString
     var name: String
     var crowd: String
+    var date: Date
 }
