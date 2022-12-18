@@ -29,19 +29,17 @@ struct SpotsView: View {
                     }
                 }
                 
-                VStack {
+                HStack {
                     TextField("Name", text:$addName)
                     Spacer()
                     TextField("Crowd (in %)", text:$addCrowd)
-                    
-                    HStack {
-                        Button("Add") {
-                            viewModel.addSpots(newSpot: Spots(name: addName, crowd: addCrowd, date: addDate))
-                        }
-                        Button("Fix") {
-                            viewModel.updateSpots(fixedSpot: Spots(name: addName, crowd: addCrowd, date: addDate))
-                        }
-                    }
+                }
+                
+                Button("Add New Spot") {
+                    viewModel.addSpots(newSpot: Spots(name: addName, crowd: addCrowd, date: addDate))
+                }
+                Button("Update the Spot") {
+                    viewModel.fixSpots(changedSpot: Spots(name: addName, crowd: addCrowd, date: addDate))
                 }
             }
             .navigationTitle("Spots List")

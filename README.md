@@ -1,6 +1,10 @@
-# Viers
+# Final Project Component
 
-### Author
+## Design Mockup Viers
+
+### Basic Team Info
+Ryuki Yanagisawa, ryuki.yanagisawa@berkeley.edu, 
+Billy Zhou, billyzhou271@berkeley.edu, 
 Kyung-Wan Woo, wkw8402@berkeley.edu, 
 
 ### Project Name
@@ -37,7 +41,7 @@ The message view will have the messenger interface between two or grouped users
 ## Figma Link
 https://www.figma.com/file/MH3y4HEbLBdYo63Dt2jrLV/Untitled?node-id=0%3A1&t=6EamXnEa1VSiBvQ4-1
 
-## Presentation + Demo Link 
+## Slide Deck Link 
 https://docs.google.com/presentation/d/1vKc5CcNpOdYQobmhrNlbPMHmMVdfJh5Vavu0lEg8lzo/edit?usp=sharing
 
 ## GitHub Link
