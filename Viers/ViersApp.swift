@@ -13,7 +13,7 @@ struct ViersApp: App {
     
     init() {
         FirebaseApp.configure()
-        UINavigationBar.appearance().backgroundColor = UIColor(red: 13/225, green: 71/255, blue:161/255, alpha: 1.0)
+        UINavigationBar.appearance().backgroundColor = UIColor(red: 2/225, green: 87/255, blue:122/255, alpha: 1.0)
         UINavigationBar.appearance().titleTextAttributes = [ .foregroundColor: UIColor.white]
         UINavigationBar.appearance().largeTitleTextAttributes = [ .foregroundColor: UIColor.white]
     }

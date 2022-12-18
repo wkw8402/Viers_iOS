@@ -44,7 +44,7 @@ struct SignUpButton: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .padding()
-            .background(.blue)
+            .background(Color(UIColor(red: 2/225, green: 169/255, blue:247/255, alpha: 1.0)))
             .foregroundColor(.white)
             .clipShape(Capsule())
             .scaleEffect(configuration.isPressed ? 1.2 : 1)
@@ -56,7 +56,7 @@ struct LoginButton: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .padding()
-            .background(.blue)
+            .background(Color(UIColor(red: 2/225, green: 169/255, blue:247/255, alpha: 1.0)))
             .foregroundColor(.white)
             .clipShape(Capsule())
             .scaleEffect(configuration.isPressed ? 1.2 : 1)

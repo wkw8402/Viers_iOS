@@ -19,13 +19,20 @@ struct SpotsView: View {
                     VStack {
                         HStack {
                             Text(spot.name)
+                                .frame(width: CGFloat(100))
                             Spacer()
                             let intCrowd = Float(spot.crowd) ?? 0.0
                             ProgressView(value: intCrowd/100)
                         }
-                        Text(spot.date, style: .time)
-                            .font(.caption)
-                            .foregroundColor(.secondary)
+                        
+                        HStack {
+                            Text(spot.date, style: .date)
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                            Text(spot.date, style: .time)
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                        }
                     }
                 }
                 
