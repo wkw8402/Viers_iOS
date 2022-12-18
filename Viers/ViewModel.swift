@@ -10,7 +10,7 @@ import Firebase
 
 class ViewModel: ObservableObject {
     @Published var userIsLoggedIn: Bool
-    @Published var spots: [Spots]
+    @State var spots: [Spots]
     
     init() {
         self.userIsLoggedIn = false
@@ -96,16 +96,16 @@ class ViewModel: ObservableObject {
                     // Retreive the document data.
                     let data = doc.data()
                     // Get data about the spot.
-                    let id = data["id"] as? String ?? ""
-                    let name = data["name"] as? String ?? ""
-                    let crowd = data["crowd"] as? String ?? ""
+                    var id = data["id"] as? String ?? ""
+                    var name = data["name"] as? String ?? ""
+                    var crowd = data["crowd"] as? String ?? ""
                     guard let timestamp = data["date"] as? Timestamp else {
                         return
                     }
-                    let date = timestamp.dateValue()
+                    var date = timestamp.dateValue()
                             
                     // Add the spot to the spots.
-                    let spot = Spots(id: id, name: name, crowd: crowd, date: date)
+                    var spot = Spots(id: id, name: name, crowd: crowd, date: date)
                     self.spots.append(spot)
                 }
             }
@@ -119,10 +119,28 @@ class ViewModel: ObservableObject {
         // Specify the document with its id that you want to add or modify.
         let ref = db.collection("spots").document(newSpot.name)
         
-        // Add or modify the document to the database.
+        // Add the document to the database.
         ref.setData(["name": newSpot.name, "crowd": newSpot.crowd, "id": newSpot.id, "date": newSpot.date])
         
         // Add the spot to the spots.
         self.spots.append(newSpot)
+    }
+    
+    // Update an spot to the spots
+    func updateSpots(fixedSpot: Spots) {
+        let db = Firestore.firestore()
+        
+        // Specify the document with its id that you want to add or modify.
+        let ref = db.collection("spots").document(fixedSpot.name)
+        
+        // Modify the document to the database.
+        ref.setData(["crowd": fixedSpot.crowd, "date": fixedSpot.date])
+        
+        // Modify the spot in the spots.
+        for (index, spotInSection) in self.spots.enumerated() {
+          guard spotInSection.name == fixedSpot.name else { continue }
+            self.spots[index].crowd = fixedSpot.crowd
+            self.spots[index].date = fixedSpot.date
+        }
     }
 }
