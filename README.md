@@ -1,11 +1,4 @@
-# Final Project Component
-
-## Design Mockup Viers
-
-### Basic Team Info
-Ryuki Yanagisawa, ryuki.yanagisawa@berkeley.edu, 
-Billy Zhou, billyzhou271@berkeley.edu, 
-Kyung-Wan Woo, wkw8402@berkeley.edu, 
+## Design Mockup for Viers iOS Application
 
 ### Project Name
 Viers
