@@ -1,8 +1,5 @@
 ## Design Mockup for Viers iOS Application
 
-### Project Name
-Viers
-
 ### Problem Domain
 Efficiency / Student-led
 
