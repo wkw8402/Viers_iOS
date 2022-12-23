@@ -10,7 +10,7 @@ RSF Crowd Level Website is not very accurate
 Waste of time and energy to just find a good study space before studying.
 
 ### Solution Overview
-Centralize the checking and uploading of crowd level in one app that centers the popular spots within university
+Centralize the checking and uploading of crowd level in one app and Firebase engine that centers the popular spots within university
 Use the app as a community-driven initiative to improve the overall efficiency of traveling within University.
 Use the app as way of recommending spots because app is based on location and university (school email logins), all less crowded suggestions should be beneficial
 Add in a messaging feature within the app to help with ascertaining the level of crowd
